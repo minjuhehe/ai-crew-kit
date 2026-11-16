@@ -60,12 +60,20 @@ flowchart LR
 
 Then every day: **Prompt #1** (start) → **#3** (do a card) → **#4** (other AI reviews) → you merge → **#8** (close).
 
-Prefer to copy files yourself? Click **Use this template**, or:
+Prefer to copy files yourself? Click **Use this template**, or into a new empty folder:
 ```bash
 npx degit minjuhehe/ai-crew-kit/template my-project
 ```
 
 ---
+
+## See it in action
+
+<img src="examples/family-score/docs/screenshot.png" width="260" align="right" alt="Family scoreboard built with the kit">
+
+**[Example: a family scoreboard](examples/family-score/)** — a non-coder answers 6 questions in Thai, and the AI sets up the project, proposes the cards, builds the first one, and checks it on a phone-sized screen. Every file it wrote is in that folder.
+
+<br clear="right">
 
 ## Built from a real project
 

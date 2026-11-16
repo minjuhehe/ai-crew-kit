@@ -4,12 +4,12 @@
 > Status: ⬜ not started · 🔄 in progress · ✅ done · ⏸ waiting for the owner
 > A card is **done** only when its "Done when" is true AND it was checked for real (not just "the code compiles").
 
-## Phase 0 — Foundation
+## Phase 0 — First thing the owner can try
+> Example cards — replace them. Start with something the owner can SEE, not invisible plumbing.
 | ID | Card | Tag | Done when | Status |
 |---|---|---|---|---|
-| P0.1 | Project skeleton: folders, build, one passing test, CI | [Lead] | `build` + `test` pass on a clean clone; CI is green | ⬜ |
-| P0.2 | Config + language files + `.env.example` | [Lead] | Changing a number/text in config changes the app without code edits | ⬜ |
-| P0.3 | {{FIRST_REAL_FEATURE}} | [any] | {{WHAT_THE_OWNER_CAN_SEE}} | ⬜ |
+| P0.1 | {{SMALLEST_USEFUL_THING}} (+ the project skeleton and one automatic check) | [Lead] | {{WHAT_THE_OWNER_CAN_SEE_AND_TRY}} ; the check passes | ⬜ |
+| P0.2 | {{NEXT_SMALL_THING}} | [any] | {{WHAT_THE_OWNER_CAN_SEE_AND_TRY}} | ⬜ |
 
 ## Phase 1 — {{PHASE_1_NAME}}
 | ID | Card | Tag | Done when | Status |

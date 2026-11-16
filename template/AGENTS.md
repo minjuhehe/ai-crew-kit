@@ -17,7 +17,6 @@
 - Coding skill: {{CODING_SKILL}}
 - Budget for paid services: {{BUDGET}}
 - Uses: {{OWNER_DEVICE}} (give commands that work there, ready to copy-paste, one step at a time)
-- Cares most about: {{OWNER_PRIORITIES}}
 
 ## Source of truth
 | File | Use it when |
@@ -40,26 +39,27 @@ If they disagree about anything in the Red Zone, stop and ask the owner. Never p
 ## 🔴 Red Zone — always ask the owner first
 Never guess here. Stop, explain the choice in plain words, give 2–3 options with your recommendation, and wait.
 - Money: prices, payments, refunds, balances, anything users pay for
-- Deleting or overwriting data, users, files, or history
+- Deleting or overwriting stored data, users, files, or history (a delete button the USER presses is normal — just make it ask "are you sure?")
 - Security: passwords, API keys, logins, permissions
 - Going live: deploying to real users, sending emails/messages to real people
 - Spending money: any new paid service, plugin, API, or plan
 - Changing a pillar or an ADR
-{{EXTRA_RED_ZONE}}
+{{EXTRA_RED_ZONE — delete this line if the owner has nothing to add}}
 
 ## Work rules (all AIs)
 1. **One card at a time** from `docs/ROADMAP.md`. One card = one branch `feat/<ID>-<slug>` = one PR. Never push to `main`.
+   (No GitHub? Same branches locally; instead of a PR, show the owner a plain-words summary and merge to `main` only after they say OK.)
 2. **Plan before big edits.** Before changing more than 3 existing files, write a short plan and wait for the owner's OK.
-3. **"Done" means verified.** Build and tests pass before you say done. Always list separately:
+3. **"Done" means verified.** Build and tests pass, and YOU ran them (or opened the app yourself) — don't ask the owner to run checks unless there's no other way, and then give copy-paste commands. Always list separately:
    ✅ what you checked, ⚠️ what you have NOT tried for real. Never call something done that you did not verify.
-4. **No secrets in code or git.** Use `.env` (git-ignored) and keep `.env.example` updated with every new variable.
+4. **No secrets in code or git.** Use `.env` (already in `.gitignore`); when you add the first secret, create `.env.example` with the variable names and keep it updated.
 5. **Small choices:** for small UX details, pick one yourself and note it in the PR. Red Zone → ask.
 6. **Stay on the card.** Ideas outside it go to `docs/BACKLOG.md` under "From development". Don't build them.
 7. **Fail safe.** If something that creates or moves value (money, credits, orders, stock) can fail halfway,
    the safe failure is "the user got nothing and can be refunded" — never "the user got it twice".
    Anything that creates value must be safe to run twice (idempotent).
-8. **Numbers live in config**, not in code, so the owner can tune them.
-9. **User-facing text** lives in language files, not hardcoded.
+8. **Numbers the owner may want to tune live in config**, not scattered in code. (Tiny project? A clearly marked block at the top of the file is fine.)
+9. **User-facing text** lives in one place (language files, or one clearly marked block for tiny projects) — never scattered.
 10. **Finishing a card:** tick it in ROADMAP, update "Status" below, add one line to `docs/CHANGELOG.md`,
     and fix the docs if what you built differs from what they say.
 11. Commit messages in English, Conventional Commits (`feat:`, `fix:`, `docs:` …).
